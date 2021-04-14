@@ -12,6 +12,7 @@ package projeto.engelox;
 public class Interface extends javax.swing.JFrame {
 
     public OperacoesModel operacoesModel = new OperacoesModel();
+    public String temporalResult = "";
     /**
      * Creates new form Interface
      */
@@ -25,12 +26,18 @@ public class Interface extends javax.swing.JFrame {
                 
                 operacoesModel.setOperation(digit);
                 updateResultInformationOnScreen();
+            }else{
+                System.out.println("Esta aqui adicionando na lista");
+                operacoesModel.setCalculatorList(temporalResult);
+                 temporalResult = "";
             }
         }
         else
         {
+            temporalResult += digit;
             operacoesModel.setOperation(digit);
             updateResultInformationOnScreen();  
+            
         }
 
     }
@@ -367,6 +374,8 @@ public class Interface extends javax.swing.JFrame {
     private void BtnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPlusActionPerformed
         // TODO add your handling code here:
         AddDigitInOperation("+");
+        System.out.println("Estou aqui");
+        
     }//GEN-LAST:event_BtnPlusActionPerformed
 
     private void BtnLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLessActionPerformed
@@ -375,7 +384,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        // TODO add your handling code here:
+        operacoesModel.getCalculatorList();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
     private void BtnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicationActionPerformed
