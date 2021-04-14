@@ -12,7 +12,6 @@ package projeto.engelox;
 public class Interface extends javax.swing.JFrame {
 
     public OperacoesModel operacoesModel = new OperacoesModel();
-    public String temporalResult = "";
     /**
      * Creates new form Interface
      */
@@ -20,32 +19,28 @@ public class Interface extends javax.swing.JFrame {
         initComponents();
     }
 
-    private void AddDigitInOperation(String digit){
-        if(digit == "+" || digit == "-" || digit == "/" || digit == "*" || digit == "."){
-            if(!operacoesModel.isSpecialOperator()){
-                
+    private void AddDigitInOperation(String digit) {
+        if (digit == "+" || digit == "-" || digit == "/" || digit == "*" || digit == ".") {
+
+            if (!operacoesModel.isLastDigitASpecialOperator()) {
+                if(digit != "."){
+                    digit = " " + digit + " ";
+                }
                 operacoesModel.setOperation(digit);
                 updateResultInformationOnScreen();
-            }else{
-                System.out.println("Esta aqui adicionando na lista");
-                operacoesModel.setCalculatorList(temporalResult);
-                 temporalResult = "";
             }
-        }
-        else
-        {
-            temporalResult += digit;
+        } else {
             operacoesModel.setOperation(digit);
-            updateResultInformationOnScreen();  
-            
+            updateResultInformationOnScreen();
+
         }
 
     }
-    
-    private void updateResultInformationOnScreen(){
+
+    private void updateResultInformationOnScreen() {
         LabelResult.setText(operacoesModel.getOperation());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,6 +92,11 @@ public class Interface extends javax.swing.JFrame {
         });
 
         BtnDivision.setText("/");
+        BtnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDivisionActionPerformed(evt);
+            }
+        });
 
         Btn0.setText("0");
         Btn0.addActionListener(new java.awt.event.ActionListener() {
@@ -374,8 +374,6 @@ public class Interface extends javax.swing.JFrame {
     private void BtnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPlusActionPerformed
         // TODO add your handling code here:
         AddDigitInOperation("+");
-        System.out.println("Estou aqui");
-        
     }//GEN-LAST:event_BtnPlusActionPerformed
 
     private void BtnLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLessActionPerformed
@@ -392,8 +390,13 @@ public class Interface extends javax.swing.JFrame {
         AddDigitInOperation("*");
     }//GEN-LAST:event_BtnMultiplicationActionPerformed
 
+    private void BtnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDivisionActionPerformed
+        // TODO add your handling code here:
+        AddDigitInOperation("/");
+    }//GEN-LAST:event_BtnDivisionActionPerformed
+
     private void BtnCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCosActionPerformed
-       AddDigitInOperation("Cos");
+        AddDigitInOperation("Cos");
     }//GEN-LAST:event_BtnCosActionPerformed
 
     private void BtnSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSinActionPerformed
