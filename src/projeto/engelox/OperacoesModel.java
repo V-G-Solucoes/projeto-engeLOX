@@ -14,18 +14,13 @@ public class OperacoesModel {
     private int countOperator = 0;
     private double totalExpressionResult = 0.0;
     
-    public void setCalculatorList(String temporalResult){
-        System.out.println(temporalResult);
-        
-            expression.add(temporalResult);
-            for(int i = 0; i < expression.size(); i++){
-            System.out.println(expression.get(i));
-        }
-    }
     
     public void getCalculatorList(){
-        for(int i = 0; i < expression.size(); i++){
-            System.out.println(expression.get(i));
+        System.out.println(Operation);
+        String[] testando  = Operation.split("[\\s]");
+        
+        for (String i : testando){
+            System.out.println(i);
         }
     }   
     /**
@@ -65,7 +60,7 @@ public class OperacoesModel {
         Result = result;
     }
 
-    public boolean isSpecialOperator(){
+    public boolean isLastDigitASpecialOperator(){
         String lastDigit = Operation.substring(Operation.length() - 1);
 
         if(lastDigit.equals("-") || lastDigit.equals("+") || lastDigit.equals("/")|| lastDigit.equals("*") || lastDigit.equals(".")){
