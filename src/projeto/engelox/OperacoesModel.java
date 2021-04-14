@@ -15,9 +15,8 @@ public class OperacoesModel {
     private double totalExpressionResult = 0.0;
     
     public void setCalculatorList(String temporalResult){
-        System.out.println(temporalResult);
-        
-            expression.add(temporalResult);
+            
+            expression.add("aaaaaaaaaaa");
             for(int i = 0; i < expression.size(); i++){
             System.out.println(expression.get(i));
         }
