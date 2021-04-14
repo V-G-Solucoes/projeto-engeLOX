@@ -88,6 +88,11 @@ public class Interface extends javax.swing.JFrame {
         });
 
         BtnDivision.setText("/");
+        BtnDivision.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDivisionActionPerformed(evt);
+            }
+        });
 
         Btn0.setText("0");
         Btn0.addActionListener(new java.awt.event.ActionListener() {
@@ -355,6 +360,11 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         AddDigitInOperation("*");
     }//GEN-LAST:event_BtnMultiplicationActionPerformed
+
+    private void BtnDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDivisionActionPerformed
+        // TODO add your handling code here:
+        AddDigitInOperation("/");
+    }//GEN-LAST:event_BtnDivisionActionPerformed
 
     /**
      * @param args the command line arguments

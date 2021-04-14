@@ -43,14 +43,14 @@ public class OperacoesModel {
     public void setResult(String result) {
         Result = result;
     }
-    
+
     public boolean isSpecialOperator(){
         String lastDigit = Operation.substring(Operation.length() - 1);
-        
+
         if(lastDigit.equals("-") || lastDigit.equals("+") || lastDigit.equals("/")|| lastDigit.equals("*") || lastDigit.equals(".")){
             return true;
         }
-        
+
         return false;
     }
 }
