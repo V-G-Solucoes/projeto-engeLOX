@@ -1,5 +1,8 @@
 package projeto.engelox;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Nigri
@@ -7,7 +10,24 @@ package projeto.engelox;
 public class OperacoesModel {
     private String Operation = "";
     private String Result = "";
-
+    private ArrayList<String> expression = new ArrayList<String>();
+    private int countOperator = 0;
+    private double totalExpressionResult = 0.0;
+    
+    public void setCalculatorList(String temporalResult){
+        System.out.println(temporalResult);
+        
+            expression.add(temporalResult);
+            for(int i = 0; i < expression.size(); i++){
+            System.out.println(expression.get(i));
+        }
+    }
+    
+    public void getCalculatorList(){
+        for(int i = 0; i < expression.size(); i++){
+            System.out.println(expression.get(i));
+        }
+    }   
     /**
      * @return the operacao
      */
@@ -19,6 +39,7 @@ public class OperacoesModel {
      * @param operation the Operation to set
      */
     public void setOperation(String operation) {
+        
         Operation += operation;
     }
 

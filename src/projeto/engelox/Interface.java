@@ -12,6 +12,7 @@ package projeto.engelox;
 public class Interface extends javax.swing.JFrame {
 
     public OperacoesModel operacoesModel = new OperacoesModel();
+    public String temporalResult = "";
     /**
      * Creates new form Interface
      */
@@ -25,12 +26,18 @@ public class Interface extends javax.swing.JFrame {
                 
                 operacoesModel.setOperation(digit);
                 updateResultInformationOnScreen();
+            }else{
+                System.out.println("Esta aqui adicionando na lista");
+                operacoesModel.setCalculatorList(temporalResult);
+                 temporalResult = "";
             }
         }
         else
         {
+            temporalResult += digit;
             operacoesModel.setOperation(digit);
             updateResultInformationOnScreen();  
+            
         }
 
     }
@@ -62,6 +69,8 @@ public class Interface extends javax.swing.JFrame {
         Btn2 = new javax.swing.JButton();
         Btn3 = new javax.swing.JButton();
         LabelResult = new javax.swing.JLabel();
+        BtnCos = new javax.swing.JButton();
+        BtnSin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -192,6 +201,20 @@ public class Interface extends javax.swing.JFrame {
         LabelResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         LabelResult.setVerifyInputWhenFocusTarget(false);
 
+        BtnCos.setText("Cos");
+        BtnCos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCosActionPerformed(evt);
+            }
+        });
+
+        BtnSin.setText("Sen");
+        BtnSin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSinActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -199,14 +222,6 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(25, 25, 25)
-                        .addComponent(BtnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
@@ -233,7 +248,22 @@ public class Interface extends javax.swing.JFrame {
                         .addComponent(BtnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(BtnEquals, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(LabelResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LabelResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(25, 25, 25)
+                                .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addComponent(Btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(BtnSin, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnCos, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addComponent(BtnPlus, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
@@ -241,7 +271,11 @@ public class Interface extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(LabelResult, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166)
+                .addGap(92, 92, 92)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnCos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnSin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -345,6 +379,8 @@ public class Interface extends javax.swing.JFrame {
     private void BtnPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPlusActionPerformed
         // TODO add your handling code here:
         AddDigitInOperation("+");
+        System.out.println("Estou aqui");
+        
     }//GEN-LAST:event_BtnPlusActionPerformed
 
     private void BtnLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnLessActionPerformed
@@ -353,7 +389,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        // TODO add your handling code here:
+        operacoesModel.getCalculatorList();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
     private void BtnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicationActionPerformed
@@ -365,6 +401,15 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         AddDigitInOperation("/");
     }//GEN-LAST:event_BtnDivisionActionPerformed
+
+    private void BtnCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCosActionPerformed
+       AddDigitInOperation("Cos");
+    }//GEN-LAST:event_BtnCosActionPerformed
+
+    private void BtnSinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSinActionPerformed
+        AddDigitInOperation("Sen");
+    }//GEN-LAST:event_BtnSinActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -412,6 +457,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton Btn7;
     private javax.swing.JButton Btn8;
     private javax.swing.JButton Btn9;
+    private javax.swing.JButton BtnCos;
     private javax.swing.JButton BtnDel;
     private javax.swing.JButton BtnDivision;
     private javax.swing.JButton BtnDot;
@@ -419,6 +465,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton BtnLess;
     private javax.swing.JButton BtnMultiplication;
     private javax.swing.JButton BtnPlus;
+    private javax.swing.JButton BtnSin;
     private javax.swing.JLabel LabelResult;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
