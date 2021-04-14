@@ -19,6 +19,7 @@ public class OperacoesModel {
      * @param operation the Operation to set
      */
     public void setOperation(String operation) {
+        
         Operation += operation;
     }
 

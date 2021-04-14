@@ -35,9 +35,18 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="Btn1" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                          <Component id="Btn2" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+                          <Component id="Btn3" min="-2" pref="75" max="-2" attributes="0"/>
+                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                          <Component id="BtnPlus" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <Component id="Btn4" min="-2" pref="75" max="-2" attributes="0"/>
                           <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
@@ -69,25 +78,6 @@
                           <Component id="BtnEquals" min="-2" pref="70" max="-2" attributes="0"/>
                       </Group>
                       <Component id="LabelResult" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="Btn1" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                                  <Component id="Btn2" min="-2" pref="75" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="Btn3" min="-2" pref="75" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="BtnSin" min="-2" pref="88" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="BtnCos" min="-2" pref="88" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
-                          <Component id="BtnPlus" min="-2" pref="70" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
@@ -98,12 +88,7 @@
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="LabelResult" min="-2" pref="70" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="BtnCos" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="BtnSin" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Btn1" min="-2" pref="50" max="-2" attributes="0"/>
                       <Component id="Btn2" min="-2" pref="50" max="-2" attributes="0"/>
@@ -299,22 +284,6 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnCos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Cos"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCosActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="BtnSin">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Sen"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnSinActionPerformed"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
