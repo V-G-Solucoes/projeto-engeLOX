@@ -32,6 +32,7 @@ public class OperacoesModel {
 
     public void deleteLastDigitOperation()
     {
+        
         if (Operation.length() > 0) {
             String newStringOperation = Operation.substring(0,Operation.length() - 1);
             Operation = newStringOperation;
