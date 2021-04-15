@@ -485,8 +485,9 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        operacoesModel.setResult();
+        operacoesModel.setResult(true);
         updateResultInformationOnScreen();
+        operacoesModel.getAllresults();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
     private void BtnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicationActionPerformed
@@ -500,7 +501,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnDivisionActionPerformed
 
     private void BtnCosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCosActionPerformed
-        AddDigitInOperation("cos");
+        AddDigitInOperation("cos(");
     }//GEN-LAST:event_BtnCosActionPerformed
 
     private void BtnAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAcActionPerformed
@@ -520,7 +521,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnSin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSin1ActionPerformed
         // TODO add your handling code here:
-        AddDigitInOperation("sin");
+        AddDigitInOperation("sin(");
     }//GEN-LAST:event_BtnSin1ActionPerformed
 
     private void BtnMLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMLessActionPerformed
@@ -532,7 +533,7 @@ public class Interface extends javax.swing.JFrame {
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
         
-        boolean operationStatus = operacoesModel.setResult();
+        boolean operationStatus = operacoesModel.setResult(false);
         
         if (operationStatus) {
             operacoesModel.setTempOperation();
@@ -550,6 +551,7 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         operacoesModel.setTempOperationResult();
         updateResultTempInformationOnScreen();
+        operacoesModel.getAllresults();
         
     }//GEN-LAST:event_BtnMEqualsActionPerformed
 

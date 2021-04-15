@@ -11,6 +11,7 @@ public class OperacoesModel {
 
     private String operation = "";
     private ArrayList<String> tempOperation = new ArrayList<>();
+    private ArrayList<String> allresults = new ArrayList<>();
     private String tempOperationResult = "";
     private String result = "";
 
@@ -45,11 +46,15 @@ public class OperacoesModel {
         return result;
     }
 
-    public boolean setResult() {
+    public boolean setResult(boolean addAllResults) {
         Expression e = new Expression(this.operation);
+        double calc = e.calculate();
 
-        if (String.valueOf(e.calculate()) != "NaN") {
-            result = String.valueOf(e.calculate());
+        if (String.valueOf(calc) != "NaN") {
+            result = String.valueOf(calc);
+            if (addAllResults) {
+                setAllResults(calc);
+            }
             return true;
         }
 
@@ -71,9 +76,9 @@ public class OperacoesModel {
 
     public void verifySinAndCos() {
 
-        int firstParePosition = this.operation.length() - 1;
+        int operationLength = this.operation.length() - 1;
 
-        for (int i = firstParePosition; i >= 0; i--) {
+        for (int i = operationLength; i >= 0; i--) {
 
             if (this.operation.charAt(i) == '(') {
                 System.out.println(i);
@@ -101,6 +106,9 @@ public class OperacoesModel {
      */
     public void getTempOperation() {
         System.out.println("Tamanho da Lista: " + tempOperation.size());
+        tempOperation.forEach(x -> {
+            System.out.println(x);
+        });
     }
 
     /**
@@ -108,20 +116,17 @@ public class OperacoesModel {
      */
     public void setTempOperation() {
         this.tempOperation.add(result);
-        System.out.println("Adicionado outro valor a lista com sucesso!");
     }
 
     public void removeTempOperation() {
         if (tempOperation.size() > 0) {
             this.tempOperation.remove(tempOperation.size() - 1);
-            System.out.println("Um item da lista removido!");
         }
 
     }
 
     public void resetTempOperation() {
         this.tempOperation = new ArrayList<>();
-        System.out.println("Lista agora está vazia");
     }
 
     /**
@@ -136,10 +141,30 @@ public class OperacoesModel {
      */
     public void setTempOperationResult() {
         double totalSoma = 0;
-        for (String operation : tempOperation){
+        for (String operation : tempOperation) {
             double novo = Double.parseDouble(operation);
             totalSoma += novo;
         }
+
         this.tempOperationResult = String.valueOf(totalSoma);
+        
+        setAllResults(totalSoma);
+    }
+
+    /**
+     * @return the allresults
+     */
+    public void getAllresults() {
+        System.out.println("Iniciando");
+        allresults.forEach(x -> {
+            System.out.println(x);
+        });
+
+    }
+
+    public void setAllResults(double totalSoma) {
+        if (totalSoma != 0) {
+            allresults.add(String.valueOf(totalSoma));
+        }
     }
 }
