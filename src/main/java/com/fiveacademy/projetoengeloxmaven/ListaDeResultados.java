@@ -15,6 +15,7 @@ public class ListaDeResultados extends javax.swing.JFrame {
      * Creates new form ListaDeResultados
      */
     public ListaDeResultados() {
+        setLocationRelativeTo(null);
         initComponents();
     }
 
