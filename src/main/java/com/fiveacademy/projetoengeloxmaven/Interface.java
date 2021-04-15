@@ -20,15 +20,13 @@ import javax.swing.JMenuItem;
  */
 public class Interface extends javax.swing.JFrame {
 
-    
     public OperacoesModel operacoesModel = new OperacoesModel();
 
     /**
      * Creates new form Interface
      */
-    
     public Interface() {
-    
+
         setLocationRelativeTo(null);
         initComponents();
         jMenuBar1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -58,8 +56,8 @@ public class Interface extends javax.swing.JFrame {
     private void updateResultInformationOnScreen() {
         LabelResult.setText(operacoesModel.getResult());
     }
-    
-    private void updateResultTempInformationOnScreen(){
+
+    private void updateResultTempInformationOnScreen() {
         LabelResult.setText(operacoesModel.getTempOperationResult());
     }
 
@@ -98,6 +96,7 @@ public class Interface extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -471,6 +470,15 @@ public class Interface extends javax.swing.JFrame {
                 jMenu1ActionPerformed(evt);
             }
         });
+
+        jMenuItem1.setText("Tutorial");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
         jMenu1.getAccessibleContext().setAccessibleDescription("");
 
@@ -598,9 +606,9 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
-        
+
         boolean operationStatus = operacoesModel.setResult(false);
-        
+
         if (operationStatus) {
             operacoesModel.setTempOperation();
         }
@@ -618,20 +626,25 @@ public class Interface extends javax.swing.JFrame {
         operacoesModel.setTempOperationResult();
         updateResultTempInformationOnScreen();
         operacoesModel.getAllresults();
-        
+
     }//GEN-LAST:event_BtnMEqualsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         // Abre o painel com os resultados anteriores
         ListaDeResultados resultFrame = new ListaDeResultados();
-        setLocationRelativeTo(null);
         resultFrame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        
+
     }//GEN-LAST:event_jMenu1ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        Ajuda ajudaFrame = new Ajuda();
+        ajudaFrame.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -701,6 +714,7 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
