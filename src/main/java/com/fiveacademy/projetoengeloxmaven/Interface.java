@@ -49,6 +49,10 @@ public class Interface extends javax.swing.JFrame {
     private void updateResultInformationOnScreen() {
         LabelResult.setText(operacoesModel.getResult());
     }
+    
+    private void updateResultTempInformationOnScreen(){
+        LabelResult.setText(operacoesModel.getTempOperationResult());
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -481,7 +485,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        var operationStatus = operacoesModel.setResult();
+        operacoesModel.setResult();
         updateResultInformationOnScreen();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
@@ -527,8 +531,9 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
-        var operationStatus = operacoesModel.setResult();
-
+        
+        boolean operationStatus = operacoesModel.setResult();
+        
         if (operationStatus) {
             operacoesModel.setTempOperation();
         }
@@ -543,7 +548,9 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMEqualsActionPerformed
         // TODO add your handling code here:
-        operacoesModel.getTempOperation();
+        operacoesModel.setTempOperationResult();
+        updateResultTempInformationOnScreen();
+        
     }//GEN-LAST:event_BtnMEqualsActionPerformed
 
     /**

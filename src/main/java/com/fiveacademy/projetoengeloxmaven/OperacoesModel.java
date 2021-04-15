@@ -100,9 +100,7 @@ public class OperacoesModel {
      * @return the tempOperation
      */
     public void getTempOperation() {
-        tempOperation.forEach(x -> {
-            System.out.println(x);
-        });
+        System.out.println("Tamanho da Lista: " + tempOperation.size());
     }
 
     /**
@@ -110,17 +108,20 @@ public class OperacoesModel {
      */
     public void setTempOperation() {
         this.tempOperation.add(result);
+        System.out.println("Adicionado outro valor a lista com sucesso!");
     }
 
     public void removeTempOperation() {
         if (tempOperation.size() > 0) {
             this.tempOperation.remove(tempOperation.size() - 1);
+            System.out.println("Um item da lista removido!");
         }
 
     }
 
     public void resetTempOperation() {
         this.tempOperation = new ArrayList<>();
+        System.out.println("Lista agora está vazia");
     }
 
     /**
@@ -133,8 +134,12 @@ public class OperacoesModel {
     /**
      * @param tempOperationResult the tempOperationResult to set
      */
-    public void setTempOperationResult(String tempOperationResult) {
-
-        this.tempOperationResult = tempOperationResult;
+    public void setTempOperationResult() {
+        double totalSoma = 0;
+        for (String operation : tempOperation){
+            double novo = Double.parseDouble(operation);
+            totalSoma += novo;
+        }
+        this.tempOperationResult = String.valueOf(totalSoma);
     }
 }
