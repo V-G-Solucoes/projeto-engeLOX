@@ -5,9 +5,14 @@
  */
 package com.fiveacademy.projetoengeloxmaven;
 
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.Window;
+import javax.swing.Box;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 /**
  *
@@ -15,6 +20,7 @@ import java.awt.Window;
  */
 public class Interface extends javax.swing.JFrame {
 
+    
     public OperacoesModel operacoesModel = new OperacoesModel();
 
     /**
@@ -22,8 +28,10 @@ public class Interface extends javax.swing.JFrame {
      */
     
     public Interface() {
+    
         setLocationRelativeTo(null);
         initComponents();
+        jMenuBar1.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
     }
 
     private void AddDigitInOperation(String digit) {
@@ -88,6 +96,8 @@ public class Interface extends javax.swing.JFrame {
         BtnMEquals = new javax.swing.JButton();
         BtnMPlus = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -453,6 +463,19 @@ public class Interface extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 524));
 
+        jMenu1.setText("Ajuda");
+        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu1ActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+        jMenu1.getAccessibleContext().setAccessibleDescription("");
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -604,6 +627,10 @@ public class Interface extends javax.swing.JFrame {
         resultFrame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
+        
+    }//GEN-LAST:event_jMenu1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -670,6 +697,8 @@ public class Interface extends javax.swing.JFrame {
     private javax.swing.JButton BtnSin1;
     private javax.swing.JLabel LabelResult;
     private javax.swing.JButton jButton1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
