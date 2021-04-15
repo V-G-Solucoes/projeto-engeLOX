@@ -255,8 +255,18 @@ public class Interface extends javax.swing.JFrame {
         });
 
         BtnMReset.setText("MC");
+        BtnMReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMResetActionPerformed(evt);
+            }
+        });
 
-        BtnMEquals.setText("MR");
+        BtnMEquals.setText("MRC");
+        BtnMEquals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMEqualsActionPerformed(evt);
+            }
+        });
 
         BtnMPlus.setText("M+");
         BtnMPlus.addActionListener(new java.awt.event.ActionListener() {
@@ -511,7 +521,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMLessActionPerformed
         // TODO add your handling code here:
-
+        operacoesModel.removeTempOperation();
 
     }//GEN-LAST:event_BtnMLessActionPerformed
 
@@ -525,6 +535,16 @@ public class Interface extends javax.swing.JFrame {
 
         operacoesModel.getTempOperation();
     }//GEN-LAST:event_BtnMPlusActionPerformed
+
+    private void BtnMResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMResetActionPerformed
+        // TODO add your handling code here:
+        operacoesModel.resetTempOperation();
+    }//GEN-LAST:event_BtnMResetActionPerformed
+
+    private void BtnMEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMEqualsActionPerformed
+        // TODO add your handling code here:
+        operacoesModel.getTempOperation();
+    }//GEN-LAST:event_BtnMEqualsActionPerformed
 
     /**
      * @param args the command line arguments

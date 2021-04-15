@@ -403,11 +403,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="MC"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMResetActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnMEquals">
           <Properties>
-            <Property name="text" type="java.lang.String" value="MR"/>
+            <Property name="text" type="java.lang.String" value="MRC"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnMEqualsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="BtnMPlus">
           <Properties>

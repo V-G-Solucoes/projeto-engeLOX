@@ -112,6 +112,17 @@ public class OperacoesModel {
         this.tempOperation.add(result);
     }
 
+    public void removeTempOperation() {
+        if (tempOperation.size() > 0) {
+            this.tempOperation.remove(tempOperation.size() - 1);
+        }
+
+    }
+
+    public void resetTempOperation() {
+        this.tempOperation = new ArrayList<>();
+    }
+
     /**
      * @return the tempOperationResult
      */
@@ -123,7 +134,7 @@ public class OperacoesModel {
      * @param tempOperationResult the tempOperationResult to set
      */
     public void setTempOperationResult(String tempOperationResult) {
-        
+
         this.tempOperationResult = tempOperationResult;
     }
 }
