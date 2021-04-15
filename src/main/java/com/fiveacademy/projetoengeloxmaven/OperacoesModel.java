@@ -81,7 +81,6 @@ public class OperacoesModel {
         for (int i = operationLength; i >= 0; i--) {
 
             if (this.operation.charAt(i) == '(') {
-                System.out.println(i);
                 if (i > 0) {
                     if (this.operation.charAt(i - 1) == 'n' || this.operation.charAt(i - 1) == 's') {
                         setOperation("*[deg])");
@@ -99,16 +98,6 @@ public class OperacoesModel {
 
     public void clearOperation() {
         this.operation = "";
-    }
-
-    /**
-     * @return the tempOperation
-     */
-    public void getTempOperation() {
-        System.out.println("Tamanho da Lista: " + tempOperation.size());
-        tempOperation.forEach(x -> {
-            System.out.println(x);
-        });
     }
 
     /**

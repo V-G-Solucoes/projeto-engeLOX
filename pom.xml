@@ -22,4 +22,5 @@
             <version>RELEASE123</version>
         </dependency>
     </dependencies>
+    <name>novoTeste</name>
 </project>
