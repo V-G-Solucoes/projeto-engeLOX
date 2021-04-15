@@ -626,6 +626,7 @@ public class Interface extends javax.swing.JFrame {
         // Abre o painel com os resultados anteriores
         ListaDeResultados resultFrame = new ListaDeResultados();
         setLocationRelativeTo(null);
+        resultFrame.getAllResults(operacoesModel);
         resultFrame.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

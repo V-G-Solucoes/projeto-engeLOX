@@ -147,18 +147,15 @@ public class OperacoesModel {
         }
 
         this.tempOperationResult = String.valueOf(totalSoma);
-        
+
         setAllResults(totalSoma);
     }
 
     /**
      * @return the allresults
      */
-    public void getAllresults() {
-        System.out.println("Iniciando");
-        allresults.forEach(x -> {
-            System.out.println(x);
-        });
+    public ArrayList<String> getAllresults() {
+        return allresults;
 
     }
 
