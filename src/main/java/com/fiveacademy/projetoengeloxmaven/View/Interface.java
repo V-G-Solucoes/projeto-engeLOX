@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.fiveacademy.projetoengeloxmaven;
+package com.fiveacademy.projetoengeloxmaven.View;
 
+import com.fiveacademy.projetoengeloxmaven.Model.OperacoesModel;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Toolkit;

@@ -1,4 +1,4 @@
-package com.fiveacademy.projetoengeloxmaven;
+package com.fiveacademy.projetoengeloxmaven.Model;
 
 import java.util.ArrayList;
 import org.mariuszgromada.math.mxparser.Expression;
