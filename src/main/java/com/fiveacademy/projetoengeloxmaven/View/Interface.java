@@ -5,7 +5,8 @@
  */
 package com.fiveacademy.projetoengeloxmaven.View;
 
-import com.fiveacademy.projetoengeloxmaven.Model.CalculadoraModel;
+
+import com.fiveacademy.projetoengeloxmaven.Model.Calculator;
 import java.awt.ComponentOrientation;
 
 /**
@@ -14,8 +15,7 @@ import java.awt.ComponentOrientation;
  */
 public class Interface extends javax.swing.JFrame {
 
-    public CalculadoraModel calculadoraModel = new CalculadoraModel();
-
+    public Calculator calculator = new Calculator();
     /**
      * Creates new form Interface
      */
@@ -29,14 +29,14 @@ public class Interface extends javax.swing.JFrame {
     private void AddDigitInOperation(String digit) {
         if (digit == "+" || digit == "-" || digit == "/" || digit == "*" || digit == ".") {
 
-            if (!calculadoraModel.isLastDigitASpecialOperator()) {
-                calculadoraModel.setOperation(digit);
-            }
+            if (!calculator.isLastDigitASpecialOperator()) {
+                calculator.setOperation(digit);
+            }   
         } else if (digit == ")") {
-            calculadoraModel.verifySinAndCos();
+            calculator.verifySinAndCos();
 
         } else {
-            calculadoraModel.setOperation(digit);
+            calculator.setOperation(digit);
         }
 
         updateOperationInformationOnScreen();
@@ -44,15 +44,15 @@ public class Interface extends javax.swing.JFrame {
     }
 
     private void updateOperationInformationOnScreen() {
-        LabelResult.setText(calculadoraModel.getOperation());
+        LabelResult.setText(calculator.getOperation());
     }
 
     private void updateResultInformationOnScreen() {
-        LabelResult.setText(calculadoraModel.getResult());
+        LabelResult.setText(calculator.getResult());
     }
 
     private void updateResultTempInformationOnScreen() {
-        LabelResult.setText(calculadoraModel.getTempOperationResult());
+        LabelResult.setText(calculator.getTempOperationResult());
     }
 
     @SuppressWarnings("unchecked")
@@ -493,7 +493,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDelActionPerformed
         // TODO add your handling code here:
-        calculadoraModel.deleteLastDigitOperation();
+        calculator.deleteLastDigitOperation();
         updateOperationInformationOnScreen();
     }//GEN-LAST:event_BtnDelActionPerformed
 
@@ -553,9 +553,9 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        calculadoraModel.setResult(true);
+        calculator.setResult(true);
         updateResultInformationOnScreen();
-        calculadoraModel.getAllresults();
+        calculator.getAllresults();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
     private void BtnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicationActionPerformed
@@ -573,7 +573,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCosActionPerformed
 
     private void BtnAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAcActionPerformed
-        calculadoraModel.clearOperation();
+        calculator.clearOperation();
         updateOperationInformationOnScreen();
     }//GEN-LAST:event_BtnAcActionPerformed
 
@@ -594,38 +594,35 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMLessActionPerformed
         // TODO add your handling code here:
-        calculadoraModel.removeTempOperation();
-
+        calculator.removeTempOperation();
     }//GEN-LAST:event_BtnMLessActionPerformed
 
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
-
-        boolean operationStatus = calculadoraModel.setResult(false);
-
+        boolean operationStatus = calculator.setResult(false);
         if (operationStatus) {
-            calculadoraModel.setTempOperation();
+            calculator.setTempOperation();
         }
     }//GEN-LAST:event_BtnMPlusActionPerformed
 
     private void BtnMResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMResetActionPerformed
         // TODO add your handling code here:
-        calculadoraModel.resetTempOperation();
+        calculator.resetTempOperation();
     }//GEN-LAST:event_BtnMResetActionPerformed
 
     private void BtnMEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMEqualsActionPerformed
         // TODO add your handling code here:
-        calculadoraModel.setTempOperationResult();
+        calculator.setTempOperationResult();
         updateResultTempInformationOnScreen();
-        calculadoraModel.getAllresults();
+        calculator.getAllresults();
 
     }//GEN-LAST:event_BtnMEqualsActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         // Abre o painel com os resultados anteriores
-        ListaDeResultados resultFrame = new ListaDeResultados();
-        resultFrame.getAllResults(calculadoraModel);
+        ResultList resultFrame = new ResultList();
+        resultFrame.getAllResults(calculator);
         resultFrame.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -636,8 +633,8 @@ public class Interface extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        Ajuda ajudaFrame = new Ajuda();
-        ajudaFrame.setVisible(true);
+        Help helpFrame = new Help();
+        helpFrame.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**

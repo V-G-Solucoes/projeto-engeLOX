@@ -7,11 +7,11 @@ import org.mariuszgromada.math.mxparser.Expression;
  *
  * @author Nigri
  */
-public class CalculadoraModel {
+public class Calculator {
 
     private String operation = "";
     private ArrayList<String> tempOperation = new ArrayList<>();
-    private ArrayList<String> allresults = new ArrayList<>();
+    private ArrayList<String> allResults = new ArrayList<>();
     private String tempOperationResult = "";
     private String result = "";
 
@@ -66,10 +66,7 @@ public class CalculadoraModel {
     public boolean isLastDigitASpecialOperator() {
         if (this.operation.length() != 0) {
             String lastDigit = this.operation.substring(this.operation.length() - 1);
-
-            if (lastDigit.equals("-") || lastDigit.equals("+") || lastDigit.equals("/") || lastDigit.equals("*") || lastDigit.equals(".")) {
-                return true;
-            }
+            return lastDigit.matches("[-\\*\\+\\/\\.]");
         }
         return false;
     }
@@ -129,28 +126,28 @@ public class CalculadoraModel {
      * @param tempOperationResult the tempOperationResult to set
      */
     public void setTempOperationResult() {
-        double totalSoma = 0;
+        double totalSum = 0;
         for (String operation : tempOperation) {
-            double novo = Double.parseDouble(operation);
-            totalSoma += novo;
+            double converterOperation = Double.parseDouble(operation);
+            totalSum += converterOperation;
         }
 
-        this.tempOperationResult = String.valueOf(totalSoma);
+        this.tempOperationResult = String.valueOf(totalSum);
 
-        setAllResults(totalSoma);
+        setAllResults(totalSum);
     }
 
     /**
      * @return the allresults
      */
     public ArrayList<String> getAllresults() {
-        return allresults;
+        return allResults;
 
     }
 
-    public void setAllResults(double totalSoma) {
-        if (totalSoma != 0) {
-            allresults.add(String.valueOf(totalSoma));
+    public void setAllResults(double totalSum) {
+        if (totalSum != 0) {
+            allResults.add(String.valueOf(totalSum));
         }
     }
 }
