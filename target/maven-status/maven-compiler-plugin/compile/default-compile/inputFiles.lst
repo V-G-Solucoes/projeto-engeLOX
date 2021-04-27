@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-C:\Users\Nigri\Documents\NetBeansProjects\ProjetoEngeloxMaven\src\main\java\com\fiveacademy\projetoengeloxmaven\Ajuda.java
-C:\Users\Nigri\Documents\NetBeansProjects\ProjetoEngeloxMaven\src\main\java\com\fiveacademy\projetoengeloxmaven\OperacoesModel.java
-C:\Users\Nigri\Documents\NetBeansProjects\ProjetoEngeloxMaven\src\main\java\com\fiveacademy\projetoengeloxmaven\ListaDeResultados.java
-C:\Users\Nigri\Documents\NetBeansProjects\ProjetoEngeloxMaven\src\main\java\com\fiveacademy\projetoengeloxmaven\Interface.java
-=======
-C:\Users\vitto\Documents\FiveAcademy\ProjetoEngeLox\src\main\java\com\fiveacademy\projetoengeloxmaven\Interface.java
-C:\Users\vitto\Documents\FiveAcademy\ProjetoEngeLox\src\main\java\com\fiveacademy\projetoengeloxmaven\ListaDeResultados.java
-C:\Users\vitto\Documents\FiveAcademy\ProjetoEngeLox\src\main\java\com\fiveacademy\projetoengeloxmaven\Ajuda.java
-C:\Users\vitto\Documents\FiveAcademy\ProjetoEngeLox\src\main\java\com\fiveacademy\projetoengeloxmaven\OperacoesModel.java
->>>>>>> 4745f1f1b097b3a54a2b193adca98def46c52030
+C:\Users\vitto\Documents\FiveAcademy\calc\src\main\java\com\fiveacademy\projetoengeloxmaven\View\Interface.java
+C:\Users\vitto\Documents\FiveAcademy\calc\src\main\java\com\fiveacademy\projetoengeloxmaven\Model\OperacoesModel.java
+C:\Users\vitto\Documents\FiveAcademy\calc\src\main\java\com\fiveacademy\projetoengeloxmaven\View\Ajuda.java
+C:\Users\vitto\Documents\FiveAcademy\calc\src\main\java\com\fiveacademy\projetoengeloxmaven\View\ListaDeResultados.java
