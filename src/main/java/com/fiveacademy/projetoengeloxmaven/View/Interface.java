@@ -5,15 +5,8 @@
  */
 package com.fiveacademy.projetoengeloxmaven.View;
 
-import com.fiveacademy.projetoengeloxmaven.Model.OperacoesModel;
+import com.fiveacademy.projetoengeloxmaven.Model.CalculadoraModel;
 import java.awt.ComponentOrientation;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.Window;
-import javax.swing.Box;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 /**
  *
@@ -21,7 +14,7 @@ import javax.swing.JMenuItem;
  */
 public class Interface extends javax.swing.JFrame {
 
-    public OperacoesModel operacoesModel = new OperacoesModel();
+    public CalculadoraModel calculadoraModel = new CalculadoraModel();
 
     /**
      * Creates new form Interface
@@ -36,14 +29,14 @@ public class Interface extends javax.swing.JFrame {
     private void AddDigitInOperation(String digit) {
         if (digit == "+" || digit == "-" || digit == "/" || digit == "*" || digit == ".") {
 
-            if (!operacoesModel.isLastDigitASpecialOperator()) {
-                operacoesModel.setOperation(digit);
+            if (!calculadoraModel.isLastDigitASpecialOperator()) {
+                calculadoraModel.setOperation(digit);
             }
         } else if (digit == ")") {
-            operacoesModel.verifySinAndCos();
+            calculadoraModel.verifySinAndCos();
 
         } else {
-            operacoesModel.setOperation(digit);
+            calculadoraModel.setOperation(digit);
         }
 
         updateOperationInformationOnScreen();
@@ -51,15 +44,15 @@ public class Interface extends javax.swing.JFrame {
     }
 
     private void updateOperationInformationOnScreen() {
-        LabelResult.setText(operacoesModel.getOperation());
+        LabelResult.setText(calculadoraModel.getOperation());
     }
 
     private void updateResultInformationOnScreen() {
-        LabelResult.setText(operacoesModel.getResult());
+        LabelResult.setText(calculadoraModel.getResult());
     }
 
     private void updateResultTempInformationOnScreen() {
-        LabelResult.setText(operacoesModel.getTempOperationResult());
+        LabelResult.setText(calculadoraModel.getTempOperationResult());
     }
 
     @SuppressWarnings("unchecked")
@@ -500,7 +493,7 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDelActionPerformed
         // TODO add your handling code here:
-        operacoesModel.deleteLastDigitOperation();
+        calculadoraModel.deleteLastDigitOperation();
         updateOperationInformationOnScreen();
     }//GEN-LAST:event_BtnDelActionPerformed
 
@@ -560,9 +553,9 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnLessActionPerformed
 
     private void BtnEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEqualsActionPerformed
-        operacoesModel.setResult(true);
+        calculadoraModel.setResult(true);
         updateResultInformationOnScreen();
-        operacoesModel.getAllresults();
+        calculadoraModel.getAllresults();
     }//GEN-LAST:event_BtnEqualsActionPerformed
 
     private void BtnMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicationActionPerformed
@@ -580,7 +573,7 @@ public class Interface extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCosActionPerformed
 
     private void BtnAcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAcActionPerformed
-        operacoesModel.clearOperation();
+        calculadoraModel.clearOperation();
         updateOperationInformationOnScreen();
     }//GEN-LAST:event_BtnAcActionPerformed
 
@@ -601,30 +594,30 @@ public class Interface extends javax.swing.JFrame {
 
     private void BtnMLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMLessActionPerformed
         // TODO add your handling code here:
-        operacoesModel.removeTempOperation();
+        calculadoraModel.removeTempOperation();
 
     }//GEN-LAST:event_BtnMLessActionPerformed
 
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
 
-        boolean operationStatus = operacoesModel.setResult(false);
+        boolean operationStatus = calculadoraModel.setResult(false);
 
         if (operationStatus) {
-            operacoesModel.setTempOperation();
+            calculadoraModel.setTempOperation();
         }
     }//GEN-LAST:event_BtnMPlusActionPerformed
 
     private void BtnMResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMResetActionPerformed
         // TODO add your handling code here:
-        operacoesModel.resetTempOperation();
+        calculadoraModel.resetTempOperation();
     }//GEN-LAST:event_BtnMResetActionPerformed
 
     private void BtnMEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMEqualsActionPerformed
         // TODO add your handling code here:
-        operacoesModel.setTempOperationResult();
+        calculadoraModel.setTempOperationResult();
         updateResultTempInformationOnScreen();
-        operacoesModel.getAllresults();
+        calculadoraModel.getAllresults();
 
     }//GEN-LAST:event_BtnMEqualsActionPerformed
 
@@ -632,7 +625,7 @@ public class Interface extends javax.swing.JFrame {
         // TODO add your handling code here:
         // Abre o painel com os resultados anteriores
         ListaDeResultados resultFrame = new ListaDeResultados();
-        resultFrame.getAllResults(operacoesModel);
+        resultFrame.getAllResults(calculadoraModel);
         resultFrame.setVisible(true);
         
     }//GEN-LAST:event_jButton1ActionPerformed

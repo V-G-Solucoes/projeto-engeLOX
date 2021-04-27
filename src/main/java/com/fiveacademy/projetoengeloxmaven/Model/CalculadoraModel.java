@@ -7,7 +7,7 @@ import org.mariuszgromada.math.mxparser.Expression;
  *
  * @author Nigri
  */
-public class OperacoesModel {
+public class CalculadoraModel {
 
     private String operation = "";
     private ArrayList<String> tempOperation = new ArrayList<>();

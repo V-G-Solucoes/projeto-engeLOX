@@ -5,7 +5,7 @@
  */
 package com.fiveacademy.projetoengeloxmaven.View;
 
-import com.fiveacademy.projetoengeloxmaven.Model.OperacoesModel;
+import com.fiveacademy.projetoengeloxmaven.Model.CalculadoraModel;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +22,7 @@ public class ListaDeResultados extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void getAllResults(OperacoesModel model){
+    public void getAllResults(CalculadoraModel model){
         String text = "";
         
         ArrayList<String> results = model.getAllresults();
