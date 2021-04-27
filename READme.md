@@ -1,12 +1,4 @@
-<style>
-.titulo{
-    font-size: 30px;
-}
-</style>
-
-<p class="titulo" align="center">
-  <strong>Calculadora do Alan</strong><br>
-</p>
+# Calculadora do Alan
 
 ## Informações Gerais
 Esse projeto é o resultado da solicitação do cliente Alan. Uma calculadora para automatizar cálculos do seu dia dia.
