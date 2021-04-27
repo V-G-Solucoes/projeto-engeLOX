@@ -5,15 +5,9 @@
  */
 package com.fiveacademy.projetoengeloxmaven.View;
 
+
 import com.fiveacademy.projetoengeloxmaven.Model.Calculator;
 import java.awt.ComponentOrientation;
-import java.awt.Dimension;
-import java.awt.Toolkit;
-import java.awt.Window;
-import javax.swing.Box;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 
 /**
  *
@@ -22,7 +16,6 @@ import javax.swing.JMenuItem;
 public class Interface extends javax.swing.JFrame {
 
     public Calculator calculator = new Calculator();
-
     /**
      * Creates new form Interface
      */
@@ -38,7 +31,7 @@ public class Interface extends javax.swing.JFrame {
 
             if (!calculator.isLastDigitASpecialOperator()) {
                 calculator.setOperation(digit);
-            }
+            }   
         } else if (digit == ")") {
             calculator.verifySinAndCos();
 
@@ -602,14 +595,11 @@ public class Interface extends javax.swing.JFrame {
     private void BtnMLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMLessActionPerformed
         // TODO add your handling code here:
         calculator.removeTempOperation();
-
     }//GEN-LAST:event_BtnMLessActionPerformed
 
     private void BtnMPlusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMPlusActionPerformed
         // TODO add your handling code here:
-
         boolean operationStatus = calculator.setResult(false);
-
         if (operationStatus) {
             calculator.setTempOperation();
         }
