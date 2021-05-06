@@ -64,11 +64,7 @@ public class Calculator {
     }
 
     public boolean isLastDigitASpecialOperator() {
-        if (this.operation.length() != 0) {
-            String lastDigit = this.operation.substring(this.operation.length() - 1);
-            return lastDigit.matches("[-\\*\\+\\/\\.]");
-        }
-        return false;
+	return (this.operation.length() != 0) && lastDigit.matches("[-\\*\\+\\/]");
     }
 
     public void verifySinAndCos() {
